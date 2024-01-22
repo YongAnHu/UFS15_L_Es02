@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<h1>BENVENUTO <span th:text="${user.username}"></span>!</h1>
+
+	<form th:action="@{/books/addBook}" th:object="${book}" method="post">
+		<label for="title">Titolo Libro</label>
+		<input id="title" th:field="*{title}"><br>
+		<span th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</span><br>
+
+		<label for="author">Autore Libro</label>
+		<input id="author" th:field="*{author}"><br>
+		<span th:if="${#fields.hasErrors('author')}" th:errors="*{author}">Author Error</span><br>
+
+		<label for="yearPublish">Data pubblicazione</label>
+		<input id="yearPublish" type="date" th:field="*{yearPublish}"><br>
+		<span th:if="${#fields.hasErrors('yearPublish')}" th:errors="*{yearPublish}">Year Error</span><br>
+
+		<label for="price">Prezzo</label>
+		<input id="price" type="number" th:field="*{price}"><br>
+		<span th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</span><br>
+
+		<input type="submit" value="Pubblica libro">
+	</form><br>
+
+	<a href="/books/cart">Vedi il carrello</a>
+	<a href="/books">Vedi libri</a>
+	<a href="/profile">Profilo</a>
+
+</body>
+</html>

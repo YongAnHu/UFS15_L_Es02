@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<h1>Lista di Libri</h1>
+
+	<ul th:each="book : ${books}">
+		<li>
+			<h3 th:text="${book.value.title}"></h3>
+			<p th:text="${book.value.author}"></p>
+			<a th:href="@{'books/' + ${book.value.getId()}}">Dettaglio</a>
+			<a th:href="@{'removeFromCart/' + ${book.key}}">Rimuovi dal Carrello</a>
+		</li>
+	</ul>
+</body>
+</html>

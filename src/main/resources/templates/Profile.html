@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<div>
+		<h1>PROFILO <span th:text="${user.username}"></span></h1>
+		<p>
+			Cognome:
+			<span th:text="${user.surname}"></span>
+		</p>
+		<p>
+			Nome:
+			<span th:text="${user.name}"></span>
+		</p><br>
+
+		<a href="/logout">Logout</a>
+<!--		<button th:onclick="|window.location.href='/logout'|">Logout</button>-->
+	</div>
+</body>
+</html>
